@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="icon" href="data:,">
+    <title>to do list</title>
+</head>
+<body>
+<div class="box" id="heading">
+
+     <h1>List Of <%=ListTiatle%> </h1>
+</div>
+<div class="box">
+    
+   <% NewListItems.forEach(function(item){%>
+    <form action="/delete"  method="post" >
+        <div class="item">
+            <input type="checkbox" name="checkbox" value="<%=item._id%>"  onchange="this.form.submit()"> <!--onclick check the check box if it was on or off  -->
+            <p><%=item.name%></p>
+        </div>
+    </form>
+   <% })%>
+
+   <form action="/"  method="post" >
+    <input type="text" name="newitem" placeholder="New Item" >
+    
+    <button type="submit" name="list"  value="<%= ListTiatle %>">+</button>
+</form>
+
+
+</div>
+
+   
+</body>
+<footer >
+    <div class="contact">  
+        <h4 class="help">You can send your feedback down below 👇</h4>
+         <ul class="myfooter">
+            <p><a class="editing1" href="https://www.linkedin.com/in/snake-eater-8abb65265/">Linked in<i class="fa-brands fa-linkedin"></i></a></p>
+            <p><a class="editing2" href="mailto:aahhaammdd55@gmail.com">Gmail<i class="fa-sharp fa-solid fa-envelope"></i></a></p>
+            <p><a class="editing3" href="https://github.com/AhmedNazem">GitHub<i class="fa-brands fa-github"></i></a></p>
+      </ul>
+    </div>
+     <h4>Copyrights by Ahmed </h4>
+</footer>
+</html>
